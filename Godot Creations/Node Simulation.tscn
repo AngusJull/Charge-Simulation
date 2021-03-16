@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Node Manager.gd" type="Script" id=1]
+[ext_resource path="res://Simulator.gd" type="Script" id=2]
+
+[node name="Simulation Manager" type="Node2D"]
+position = Vector2( 0.770691, 0 )
+script = ExtResource( 1 )
+
+[node name="Simulator" type="Node2D" parent="."]
+script = ExtResource( 2 )

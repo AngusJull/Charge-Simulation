@@ -1,0 +1,166 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Node Strength.gd" type="Script" id=1]
+[ext_resource path="res://Simulate Button.gd" type="Script" id=2]
+[ext_resource path="res://UI Controller.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+border_color = Color( 0.239216, 0.239216, 0.239216, 1 )
+
+[node name="UI" type="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1024.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sidebar" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -136.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node Strength" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = -146.15
+margin_right = -14.0
+margin_bottom = -114.15
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="Node Strength"]
+margin_left = 8.0
+margin_right = 104.0
+margin_bottom = 32.0
+text = "2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Node Strength"]
+margin_left = 8.0
+margin_top = -16.15
+margin_right = 104.0
+margin_bottom = 2.85001
+text = "Node Strength"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minus" type="Button" parent="Node Strength"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -16.0
+margin_right = -82.0
+margin_bottom = 16.0
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plus" type="Button" parent="Node Strength"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -29.7347
+margin_top = -16.0
+margin_right = 0.265259
+margin_bottom = 16.0
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colour Chooser" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = -212.0
+margin_right = -14.0
+margin_bottom = -172.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeColour" type="ColorPickerButton" parent="Colour Chooser"]
+margin_right = 48.0
+margin_bottom = 41.0
+color = Color( 1, 0, 0.0156863, 1 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Colour Chooser"]
+margin_left = 60.416
+margin_top = 13.416
+margin_right = 101.416
+margin_bottom = 27.416
+text = "Colour"
+
+[node name="Simulate Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = 24.6872
+margin_right = -13.0
+margin_bottom = 63.6872
+text = "Simulate"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add Node" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = -98.7721
+margin_right = -14.0
+margin_bottom = -65.7721
+text = "Add Node"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Clear Screen" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = -26.4072
+margin_right = -15.0
+margin_bottom = 7.59277
+text = "Clear"
+__meta__ = {
+"_edit_use_anchors_": false
+}
