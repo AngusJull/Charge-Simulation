@@ -8,6 +8,7 @@ var selectedNode = null
 
 func _ready():
 	$"../UI".connect("newNodeRequested", self, "on_UI_NodeRequest")
+	$"../UI".connect("nodeRemovalRequested", self, "on_UI_NodeRemove")
 	
 
 func _process(_delta):
@@ -54,3 +55,12 @@ func createNode(strength: int, colour: Color) -> SimulationNode:
 position to that of the mouse"""
 func on_UI_NodeRequest(strength, colour):
 	createNode(strength, colour).position = Vector2(100, 100)
+
+func on_UI_NodeRemove():
+	if(selectedNode != null):
+		#removing the slected node from the list of nodes
+		nodes.erase(selectedNode)
+		#deleting the node
+		selectedNode.queue_free()
+		#unselecting the node
+		selectedNode = null

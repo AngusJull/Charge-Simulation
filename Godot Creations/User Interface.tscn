@@ -1,18 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Node Strength.gd" type="Script" id=1]
 [ext_resource path="res://Simulate Button.gd" type="Script" id=2]
 [ext_resource path="res://UI Controller.gd" type="Script" id=3]
+[ext_resource path="res://Secondary Pannel Style.tres" type="StyleBox" id=4]
+[ext_resource path="res://ProgressBar.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-border_color = Color( 0.239216, 0.239216, 0.239216, 1 )
+bg_color = Color( 0.145098, 0.145098, 0.164706, 1 )
+border_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+
+[sub_resource type="Theme" id=2]
+Panel/styles/panel = null
 
 [node name="UI" type="Control"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1024.0
+margin_left = -1024.5
+margin_top = 0.168945
+margin_right = -0.5
+margin_bottom = 0.168945
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -22,27 +30,117 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -136.0
+margin_left = -135.0
+margin_top = -1.0
+margin_right = 1.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node Strength" type="Panel" parent="."]
+[node name="Creation Block" type="Panel" parent="."]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -126.0
-margin_top = -146.15
-margin_right = -14.0
-margin_bottom = -114.15
+margin_left = -135.0
+margin_top = -247.0
+margin_right = 1.0
+margin_bottom = -9.0
+theme = SubResource( 2 )
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Creation Block"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -113.809
+margin_top = -104.191
+margin_right = -22.8093
+margin_bottom = -90.1907
+text = "Node Creation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colour Chooser" type="Panel" parent="Creation Block"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = -78.0
+margin_right = -12.0
+margin_bottom = -38.0
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeColour" type="ColorPickerButton" parent="Creation Block/Colour Chooser"]
+margin_right = 48.0
+margin_bottom = 41.0
+color = Color( 1, 0, 0.0156863, 1 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Creation Block/Colour Chooser"]
+margin_left = 60.416
+margin_top = 13.416
+margin_right = 101.416
+margin_bottom = 27.416
+text = "Colour"
+
+[node name="Add Node" type="Button" parent="Creation Block"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = 35.2279
+margin_right = -12.0
+margin_bottom = 68.2279
+text = "Add Node"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Remove Node" type="Button" parent="Creation Block"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = 73.0255
+margin_right = -12.0
+margin_bottom = 106.026
+text = "Remove Node"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node Strength" type="Panel" parent="Creation Block"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = -12.15
+margin_right = -12.0
+margin_bottom = 19.85
+custom_styles/panel = ExtResource( 4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Value" type="Label" parent="Node Strength"]
+[node name="Value" type="Label" parent="Creation Block/Node Strength"]
 margin_left = 8.0
 margin_right = 104.0
 margin_bottom = 32.0
@@ -53,7 +151,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="Node Strength"]
+[node name="Title" type="Label" parent="Creation Block/Node Strength"]
 margin_left = 8.0
 margin_top = -16.15
 margin_right = 104.0
@@ -65,7 +163,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Minus" type="Button" parent="Node Strength"]
+[node name="Minus" type="Button" parent="Creation Block/Node Strength"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -79,7 +177,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Plus" type="Button" parent="Node Strength"]
+[node name="Plus" type="Button" parent="Creation Block/Node Strength"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -93,73 +191,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Colour Chooser" type="Panel" parent="."]
+[node name="Simulation Block" type="Panel" parent="."]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -126.0
-margin_top = -212.0
-margin_right = -14.0
-margin_bottom = -172.0
+margin_left = -135.0
+margin_top = 30.0
+margin_right = 1.0
+margin_bottom = 174.0
+theme = SubResource( 2 )
+custom_styles/panel = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NodeColour" type="ColorPickerButton" parent="Colour Chooser"]
-margin_right = 48.0
-margin_bottom = 41.0
-color = Color( 1, 0, 0.0156863, 1 )
-edit_alpha = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Colour Chooser"]
-margin_left = 60.416
-margin_top = 13.416
-margin_right = 101.416
-margin_bottom = 27.416
-text = "Colour"
-
-[node name="Simulate Button" type="Button" parent="."]
+[node name="Label" type="Label" parent="Simulation Block"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -126.0
-margin_top = 24.6872
-margin_right = -13.0
-margin_bottom = 63.6872
+margin_left = -102.0
+margin_top = -60.0
+margin_right = -32.0
+margin_bottom = -45.0
+text = "Simulation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Simulate Button" type="Button" parent="Simulation Block"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -123.437
+margin_top = 6.46545
+margin_right = -12.4365
+margin_bottom = 45.4655
 text = "Simulate"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Add Node" type="Button" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="Simulation Block"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -126.0
-margin_top = -98.7721
-margin_right = -14.0
-margin_bottom = -65.7721
-text = "Add Node"
+margin_left = -125.0
+margin_top = 48.0
+margin_right = -10.0
+margin_bottom = 62.0
+max_value = 100.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Clear Screen" type="Button" parent="."]
+[node name="Clear Screen" type="Button" parent="Simulation Block"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -126.0
-margin_top = -26.4072
-margin_right = -15.0
-margin_bottom = 7.59277
+margin_left = -123.325
+margin_top = -42.2572
+margin_right = -12.3248
+margin_bottom = -8.2572
 text = "Clear"
 __meta__ = {
 "_edit_use_anchors_": false
